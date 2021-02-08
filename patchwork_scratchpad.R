@@ -182,7 +182,7 @@ x <- chart_data %>%
 x
 
 
-
+#//////////////////////
 
 
 # create segment_tbl
@@ -334,8 +334,11 @@ z
 #         print(target = "output/charts/x.docx")
 
 
+#////////////////
+
+
 plot_width <- 200
-plot_height <- 10
+plot_height <- 13
 layout <- c(
         area(t = 1, l = 1, b = 10, r = plot_width * 3), # spacer 1 to 1
         area(t = 11, l = 1, b = plot_height + 11, r = plot_width), # 2 to 4
@@ -346,27 +349,20 @@ layout <- c(
 plot(layout)
 
 
-# chart_width <- 300
-# plot_width <- 100
-# plot_height <- 10
-# layout <- c(
-#         area(t = 1, l = 1, b = 10, r = chart_width), # spacer 1 to 1
-#         area(t = 11, l = 1, b = plot_height + 11, r = plot_width), # 2 to 4
-#         area(t = 11, l = chart_width / 3, b = plot_height + 11, r = (chart_width / 3) + plot_width), # 6 to 8
-#         area(t = 11, l = (chart_width / 3) * 2, b = plot_height + 11, r = chart_width), # 10 to 12
-#         area(t = plot_height + 12, l = 1, b = plot_height + 22, r = chart_width)) # spacer 13 to 13
-# )
-# plot(layout)
+#///////////////
 
+
+# create patchwork plot
 patchwork_test <- wrap_plots(plot_spacer(),
                              x,
-                             # plot_spacer(),
                              z,
-                             # plot_spacer(),
                              z, 
                              plot_spacer()) +
         plot_layout(design = layout) 
 # patchwork_test
+
+
+#///////////////////
 
 
 # save chart as emf
